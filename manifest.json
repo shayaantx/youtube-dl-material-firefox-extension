@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "youtube-dl-material-download-buttons",
+    "version": "0.5",
+    "description": "Extension that gives you buttons for downloading audio/video from youtubedl-material",
+    "content_scripts": [
+        {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content-script.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "storage",
+        "contextMenus",
+        "activeTab",
+        "webNavigation"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    }
+}
