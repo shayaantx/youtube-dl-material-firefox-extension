@@ -1,6 +1,6 @@
 function download(url, audioOnly) {
     var input_url = url;
-    
+    input_url = input_url.replace("m.youtube.com", "youtube.com");
     chrome.storage.sync.get(
         {"frontend_url": "http://localhost"}, 
         function(items) {
