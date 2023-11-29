@@ -8,4 +8,6 @@ It also closes the tab after a second.
 
 ## Usage
 
-Zip the contents, upload to firefox AMO, and use it. (I don't feel like publishing for wide use)
+Zip the contents, upload to firefox AMO, and use it.
+
+Or https://addons.mozilla.org/en-US/firefox/addon/ytdl-material-download-buttons/

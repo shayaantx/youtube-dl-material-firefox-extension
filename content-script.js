@@ -27,6 +27,17 @@ buttonContainer.appendChild(downloadAudioButton);
 buttonContainer.appendChild(downloadVideoButton);
 
 setInterval(() => {
+    // mobile
+    if (window.location.href.includes("m.youtube.com/watch?")) {
+        const elements = document.querySelectorAll('ytm-item-section-renderer');
+        for (const element of elements) {
+            if (element.getAttribute("section-identifier") === "comments-entry-point") {
+                element.parentNode.insertBefore(buttonContainer, element);
+                return;
+            }
+        }
+    }
+    // desktop
     if (window.location.href.includes("youtube.com/watch?")) {
         document.getElementById('middle-row').appendChild(buttonContainer);
     }
