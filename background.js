@@ -1,6 +1,14 @@
+const youtubeMobileUrl = "m.youtube.com";
+const youtubeDesktopUrl = "youtube.com";
+
 function download(url, audioOnly) {
     var input_url = url;
-    input_url = input_url.replace("m.youtube.com", "youtube.com");
+    let timeout = 1000;
+    if (input_url.includes(youtubeMobileUrl)) {
+        // mobile tabs seem to close faster
+        timeout = 3000;
+    }
+    input_url = input_url.replace(youtubeMobileUrl, youtubeDesktopUrl);
     chrome.storage.sync.get(
         {"frontend_url": "http://localhost"}, 
         function(items) {
@@ -10,7 +18,7 @@ function download(url, audioOnly) {
             
             setTimeout(() => {
                 chrome.tabs.remove(createdTabId);
-            }, 1000);
+            }, timeout);
         });
     });
 }

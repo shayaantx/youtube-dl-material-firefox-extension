@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "youtube-dl-material-download-buttons",
-    "version": "0.8",
+    "version": "0.9",
     "description": "Extension that gives you buttons for downloading audio/video from youtubedl-material",
     "content_scripts": [
         {
